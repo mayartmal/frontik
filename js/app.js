@@ -46,13 +46,6 @@ book.appendPerson(artem, '+7 (916) 647-9823');
 book.appendPerson(danila, '+7 (455) 647-9823');
 book.appendPerson(vladimir, '+7 (999) 234-5456');
 
-for (var key in book.persons) {
-  console.log(key);
-}
-
-
-
-
 //---------------------------------------------------------------
 
 function onload() {
@@ -60,30 +53,40 @@ function onload() {
   let personsRow = document.getElementById('personsRow');
 
   for (var key in book.persons) {
+    // getting sets
+    person = book.persons[key];
+    personObject = person['personObject'];
+    // getting user info
+    personPhone = person['phone'];
+    personLogin = personObject.getLogin();
+    personFirstName = personObject.getFirstName();
+    personSecondName = personObject.getSecondName();
+    // tags prepearing
     let colDiv = document.createElement('div');
     colDiv.className = 'col-md-4';
-    console.log(colDiv);
-
     let thumbnailDiv = document.createElement('div');
     thumbnailDiv.className = 'thumbnail';
-    console.log(thumbnailDiv);
-
     let imgPlace = document.createElement('img');
     imgPlace.src = 'http://via.placeholder.com/350x150';
-    console.log(imgPlace);
-
     let captionDiv = document.createElement('div');
     captionDiv.className = 'caption';
-    console.log(captionDiv);
+    let thumbnailLabel = document.createElement('h3');
+    thumbnailLabel.innerHTML = personFirstName + ' ' + personSecondName;
+    let loginField = document.createElement('span');
+    loginField.innerHTML = 'User login: ' + personLogin + ' ';
+    let phoneField = document.createElement('span');
+    phoneField.innerHTML = 'User psone: ' + personPhone;
 
-    let textDiv = document.createElement('div');
-    textDiv.innerHTML = key;
-    console.log(textDiv);
+
+
 
     personsRow.appendChild(colDiv);
     colDiv.appendChild(thumbnailDiv);
     thumbnailDiv.appendChild(imgPlace);
     thumbnailDiv.appendChild(captionDiv);
-    thumbnailDiv.appendChild(textDiv);
+    thumbnailDiv.appendChild(thumbnailLabel);
+    thumbnailDiv.appendChild(loginField);
+    thumbnailDiv.appendChild(phoneField);
   }
+
 }
