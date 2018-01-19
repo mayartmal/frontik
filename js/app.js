@@ -34,6 +34,18 @@ class PhoneBook {
     let phone = person.phone;
     return phone;
   }
+  loadBookFromServer(){
+    let danila = new Person('Danila', 'Kharchilin', 'frost');
+    let artem = new Person('Artem', 'Malyutin', 'mayartmal');
+    let vladimir = new Person('Vladimir', 'Lavrischev', 'lavr');
+    let alexander = new Person('Alexander', 'Vlasov', 'sosna')
+    book.appendPerson(artem, '+7 (916) 647-9823');
+    book.appendPerson(danila, '+7 (455) 647-9823');
+    book.appendPerson(vladimir, '+7 (999) 234-5456');
+    book.appendPerson(alexander, '+7 (333) 777-5677');
+  }
+
+
 }
 
 class PhoneBookView {
@@ -62,6 +74,7 @@ class PhoneBookView {
       let loginField = document.createElement('span');
       loginField.innerHTML = 'User login: ' + personLogin + ' ';
       let phoneField = document.createElement('span');
+      let oneLineInnerElements
       phoneField.innerHTML = 'User psone: ' + personPhone;
       personsRow.appendChild(colDiv);
       colDiv.appendChild(thumbnailDiv);
@@ -75,16 +88,9 @@ class PhoneBookView {
 }
 
 let book = new PhoneBook();
+book.loadBookFromServer();
 
-let danila = new Person('Danila', 'Kharchilin', 'frost');
-let artem = new Person('Artem', 'Malyutin', 'mayartmal');
-let vladimir = new Person('Vladimir', 'Lavrischev', 'lavr');
-let alexander = new Person('Alexander', 'Vlasov', 'sosna')
 
-book.appendPerson(artem, '+7 (916) 647-9823');
-book.appendPerson(danila, '+7 (455) 647-9823');
-book.appendPerson(vladimir, '+7 (999) 234-5456');
-book.appendPerson(alexander, '+7 (333) 777-5677');
 
 //---------------------------------------------------------------
 
