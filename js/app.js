@@ -50,7 +50,7 @@ class PhoneBookView {
       let personSecondName = personObject.getSecondName();
       // tags prepearing
       let colDiv = document.createElement('div');
-      colDiv.className = 'col-md-4';
+      colDiv.className = 'col-md-3';
       let thumbnailDiv = document.createElement('div');
       thumbnailDiv.className = 'thumbnail';
       let imgPlace = document.createElement('img');
@@ -79,10 +79,12 @@ let book = new PhoneBook();
 let danila = new Person('Danila', 'Kharchilin', 'frost');
 let artem = new Person('Artem', 'Malyutin', 'mayartmal');
 let vladimir = new Person('Vladimir', 'Lavrischev', 'lavr');
+let alexander = new Person('Alexander', 'Vlasov', 'sosna')
 
 book.appendPerson(artem, '+7 (916) 647-9823');
 book.appendPerson(danila, '+7 (455) 647-9823');
 book.appendPerson(vladimir, '+7 (999) 234-5456');
+book.appendPerson(alexander, '+7 (333) 777-5677');
 
 //---------------------------------------------------------------
 
