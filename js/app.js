@@ -46,14 +46,10 @@ book.appendPerson(artem, '+7 (916) 647-9823');
 book.appendPerson(danila, '+7 (455) 647-9823');
 book.appendPerson(vladimir, '+7 (999) 234-5456');
 
-set = book.persons;
-// for p on set{
-//   console.log(1);
-// }
-console.log(set['frost']);
+for (var key in book.persons) {
+  console.log(key);
+}
 
-  console.log(item);
-;
 
 
 
@@ -61,35 +57,33 @@ console.log(set['frost']);
 
 function onload() {
 
-
-  //let artemPhone = book.getPhoneNumber('Artem');
-  //let danilaPhone = book.getPhoneNumber('Danila');
-
   let personsRow = document.getElementById('personsRow');
 
+  for (var key in book.persons) {
+    let colDiv = document.createElement('div');
+    colDiv.className = 'col-md-4';
+    console.log(colDiv);
 
-  let thumbnailArtem = document.createElement('div');
-  thumbnailArtem.className = 'thumbnail'
-  let imgThm = document.createElement('img');
-  imgThm.src = 'http://via.placeholder.com/350x150';
-  let captionDiv = document.createElement('div');
-  captionDiv.className = 'caption';
-  var textDiv = document.createElement('div');
-  textDiv.innerHTML = artem.getFirstName();
+    let thumbnailDiv = document.createElement('div');
+    thumbnailDiv.className = 'thumbnail';
+    console.log(thumbnailDiv);
 
-  let thumbnailsDiv = document.getElementById('thumbnailsPlace');
-  thumbnailsDiv.appendChild(imgThm);
-  thumbnailsDiv.appendChild(captionDiv);
-  thumbnailsDiv.appendChild(textDiv);
+    let imgPlace = document.createElement('img');
+    imgPlace.src = 'http://via.placeholder.com/350x150';
+    console.log(imgPlace);
 
+    let captionDiv = document.createElement('div');
+    captionDiv.className = 'caption';
+    console.log(captionDiv);
 
+    let textDiv = document.createElement('div');
+    textDiv.innerHTML = key;
+    console.log(textDiv);
 
-  console.log(thumbnailArtem);
-  console.log(imgThm);
-  console.log(captionDiv);
-
-
-
-
-
+    personsRow.appendChild(colDiv);
+    colDiv.appendChild(thumbnailDiv);
+    thumbnailDiv.appendChild(imgPlace);
+    thumbnailDiv.appendChild(captionDiv);
+    thumbnailDiv.appendChild(textDiv);
+  }
 }
