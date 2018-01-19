@@ -36,6 +36,44 @@ class PhoneBook {
   }
 }
 
+class PhoneBookView {
+  constructor(book) {
+  let personsRow = document.getElementById('personsRow');
+    for (var key in book.persons) {
+      // getting sets
+      let person = book.persons[key];
+      let personObject = person['personObject'];
+      // getting user info
+      let personPhone = person['phone'];
+      let personLogin = personObject.getLogin();
+      let personFirstName = personObject.getFirstName();
+      let personSecondName = personObject.getSecondName();
+      // tags prepearing
+      let colDiv = document.createElement('div');
+      colDiv.className = 'col-md-4';
+      let thumbnailDiv = document.createElement('div');
+      thumbnailDiv.className = 'thumbnail';
+      let imgPlace = document.createElement('img');
+      imgPlace.src = 'http://via.placeholder.com/350x150';
+      let captionDiv = document.createElement('div');
+      captionDiv.className = 'caption';
+      let thumbnailLabel = document.createElement('h3');
+      thumbnailLabel.innerHTML = personFirstName + ' ' + personSecondName;
+      let loginField = document.createElement('span');
+      loginField.innerHTML = 'User login: ' + personLogin + ' ';
+      let phoneField = document.createElement('span');
+      phoneField.innerHTML = 'User psone: ' + personPhone;
+      personsRow.appendChild(colDiv);
+      colDiv.appendChild(thumbnailDiv);
+      thumbnailDiv.appendChild(imgPlace);
+      thumbnailDiv.appendChild(captionDiv);
+      thumbnailDiv.appendChild(thumbnailLabel);
+      thumbnailDiv.appendChild(loginField);
+      thumbnailDiv.appendChild(phoneField);
+    }
+  }
+}
+
 let book = new PhoneBook();
 
 let danila = new Person('Danila', 'Kharchilin', 'frost');
@@ -50,43 +88,6 @@ book.appendPerson(vladimir, '+7 (999) 234-5456');
 
 function onload() {
 
-  let personsRow = document.getElementById('personsRow');
-
-  for (var key in book.persons) {
-    // getting sets
-    person = book.persons[key];
-    personObject = person['personObject'];
-    // getting user info
-    personPhone = person['phone'];
-    personLogin = personObject.getLogin();
-    personFirstName = personObject.getFirstName();
-    personSecondName = personObject.getSecondName();
-    // tags prepearing
-    let colDiv = document.createElement('div');
-    colDiv.className = 'col-md-4';
-    let thumbnailDiv = document.createElement('div');
-    thumbnailDiv.className = 'thumbnail';
-    let imgPlace = document.createElement('img');
-    imgPlace.src = 'http://via.placeholder.com/350x150';
-    let captionDiv = document.createElement('div');
-    captionDiv.className = 'caption';
-    let thumbnailLabel = document.createElement('h3');
-    thumbnailLabel.innerHTML = personFirstName + ' ' + personSecondName;
-    let loginField = document.createElement('span');
-    loginField.innerHTML = 'User login: ' + personLogin + ' ';
-    let phoneField = document.createElement('span');
-    phoneField.innerHTML = 'User psone: ' + personPhone;
-
-
-
-
-    personsRow.appendChild(colDiv);
-    colDiv.appendChild(thumbnailDiv);
-    thumbnailDiv.appendChild(imgPlace);
-    thumbnailDiv.appendChild(captionDiv);
-    thumbnailDiv.appendChild(thumbnailLabel);
-    thumbnailDiv.appendChild(loginField);
-    thumbnailDiv.appendChild(phoneField);
-  }
+  let view = new PhoneBookView(book);
 
 }
