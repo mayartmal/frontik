@@ -62,10 +62,15 @@ class PhoneBookView {
         btnDefaultA.href = '#';
         btnDefaultA.innerHTML = 'Default btn';
 
+        //create space span
+        let spaceSpan = document.createElement('span');
+        spaceSpan.innerHTML = ' ';
+
         // add elements to html body. thumbnail elements will add via for loop
         personsRow.appendChild(colDiv);
         colDiv.appendChild(thumbnailDiv);
         btnParagraph.appendChild(btnPrimaryA);
+        btnParagraph.appendChild(spaceSpan);
         btnParagraph.appendChild(btnDefaultA);
 
         for (let i = 0; i < thumbnailChailds.length; i++) {
