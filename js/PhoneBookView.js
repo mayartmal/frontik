@@ -18,10 +18,13 @@ class PhoneBookView {
         colDiv.className = 'col-md-4';
         let thumbnailDiv = document.createElement('div');
         thumbnailDiv.className = 'thumbnail';
-        //создаем массив для хранения содержимого thumbnailDiv'а
 
+        //создаем массив для хранения содержимого thumbnailDiv'а
         let thumbnailChailds = [];
 
+
+        //создаем эдементы thumbnail'а и заносим их в массив thumbnailChailds
+        //may be I shuld make class or method fos this operations?
         let imgPlace = document.createElement('img');
         imgPlace.src = 'http://via.placeholder.com/350x150';
         thumbnailChailds.push(imgPlace);
@@ -42,8 +45,28 @@ class PhoneBookView {
         phoneField.innerHTML = 'User phone: ' + personPhone;
         thumbnailChailds.push(phoneField);
 
+        let btnParagraph = document.createElement('p');
+        thumbnailChailds.push(btnParagraph);
+
+        //creation of the primaty btn
+        let btnPrimaryA = document.createElement('a');
+        btnPrimaryA.className = 'btn btn-primary';
+        btnPrimaryA.role = 'button';
+        btnPrimaryA.href = '#';
+        btnPrimaryA.innerHTML = 'Primaty btn';
+
+        //creation of the default btn
+        let btnDefaultA = document.createElement('a');
+        btnDefaultA.className = 'btn btn-default';
+        btnDefaultA.role = 'button';
+        btnDefaultA.href = '#';
+        btnDefaultA.innerHTML = 'Default btn';
+
+        // add elements to html body. thumbnail elements will add via for loop
         personsRow.appendChild(colDiv);
         colDiv.appendChild(thumbnailDiv);
+        btnParagraph.appendChild(btnPrimaryA);
+        btnParagraph.appendChild(btnDefaultA);
 
         for (let i = 0; i < thumbnailChailds.length; i++) {
           thumbnailDiv.appendChild(thumbnailChailds[i]);
