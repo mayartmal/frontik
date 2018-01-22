@@ -19,11 +19,7 @@ class PhoneBook {
     return phone;
   }
 
-<<<<<<< HEAD:templates/js/PhoneBook.js
   loadBookFromServer(){
-=======
-  loadBookFromServer(book) {
->>>>>>> 0a529ee3ace1105e632b985d683b76328fc6ce18:js/PhoneBook.js
     let danila = new Person('Danila', 'Kharchilin', 'frost');
     let artem = new Person('Artem', 'Malyutin', 'mayartmal');
     let vladimir = new Person('Vladimir', 'Lavrischev', 'lavr');
