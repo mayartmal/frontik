@@ -13,13 +13,13 @@ class PhoneBook {
     this.persons[key] = pmap;
   }
 
-  getPhoneNumber(firstName){
+  getPhoneNumber(firstName) {
     let person = this.persons[firstName];
     let phone = person.phone;
     return phone;
   }
 
-  loadBookFromServer(book){
+  loadBookFromServer(book) {
     let danila = new Person('Danila', 'Kharchilin', 'frost');
     let artem = new Person('Artem', 'Malyutin', 'mayartmal');
     let vladimir = new Person('Vladimir', 'Lavrischev', 'lavr');
