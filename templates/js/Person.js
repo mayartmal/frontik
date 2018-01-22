@@ -6,15 +6,15 @@ class Person {
     this.login = login;
   }
 
-  getFirstName(){
+  getFirstName() {
     return this.firstName;
   }
 
-  getSecondName(){
+  getSecondName() {
     return  this.secondName
   }
 
-  getLogin(){
+  getLogin() {
     return this.login
   }
   
