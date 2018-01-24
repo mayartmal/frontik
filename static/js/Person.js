@@ -11,11 +11,11 @@ class Person {
   }
 
   getSecondName() {
-    return  this.secondName
+    return  this.secondName;
   }
 
   getLogin() {
-    return this.login
+    return this.login;
   }
-  
+
 }
