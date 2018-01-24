@@ -10,6 +10,7 @@ def index():
 
 @app.route('/contacts/', methods=['GET'])
 def contacts():
+    #jsonify превращает .py словарь в js объект
     return jsonify(
         contacts = {
             'name': 'Petro',
