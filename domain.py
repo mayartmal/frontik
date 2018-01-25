@@ -1,12 +1,15 @@
 import json
 
-class Simbol(Person):
-    pass
+class Person:
+
+    def __init__(self, first_name, second_name, login):
+        self.first_name = first_name
+        self.second_name = second_name
+        self.login = login
 
 
 
-
-#почему номер телефона присваивается в классе phonbook?
+#почему номер телефона присваивается в классе person
 class PhoneBook:
     def __init__(self):
         self.persons = {}
