@@ -1,16 +1,12 @@
 {
-  "persons": [
-    {
-      "firstName": "Danila",
-      "secondName": "Kharchikin",
-      "login": "frost",
-      "phone": "+7 999 999 23 45"
+  "contacts": {
+    "1212": {
+      "firstName": "Zorg",
+      "secondName": "Petrov"
     },
-    {
-      "firstName": "Artem",
-      "secondName": "Malyutin",
-      "login": "mayartmal",
-      "phone": "+7 444 333 11 12"
+    "4567890": {
+      "firstName": "Zorg",
+      "secondName": "Petrov"
     }
-  ]
+  }
 }

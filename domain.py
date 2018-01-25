@@ -1,47 +1,49 @@
-import json
-
-class Person:
-
-    def __init__(self, first_name, second_name, login):
-        self.first_name = first_name
-        self.second_name = second_name
-        self.login = login
-
+import codecs, json
 
 
 #почему номер телефона присваивается в классе person
-class PhoneBook:
+class ContactBook:
     def __init__(self):
-        self.persons = {}
+        self.contacts = {}
 
-    def append_person(self, person, phone):
+    def append_contact(self, phone, first_name, second_name):
+        self.contacts[phone] = {
+            'first_name': first_name,
+            'second_name': second_name
+        }
 
-        pmap = {
-          'person_object': person,
-          'phone': phone,
-        };
+    def append_contacts(self):
+            contacts = self.__load_contacts('db.json')
+            for phone, contact in contacts.items():
+                self.append_contact(
+                    phone, contact['firstName'], contact['secondName']
+                )
 
-        key = person.login
-        self.persons[key] = pmap
 
-    def load(self):
-
-        with open('db.json', 'r') as f:
+    def __load_contacts(self, file_name):
+        with open(file_name, 'r') as f:
             result = json.load(f)
+        return result['contacts']
 
-        persons = result['persons']
+    def write_contact(self, file_name, phone, first_name, second_name):
+        with codecs.open(file_name, 'r', 'utf8') as f:
+            result = json.load(f)
+        print(result)
 
-        for person in persons:
-            first_name = person['firstName']
-            second_name = person['secondName']
-            login = person['login']
-            phone = person['phone']
-            print(first_name, second_name, login, phone)
+        result['contacts'][phone] = {
+            'firstName': first_name,
+            'secondName': second_name
+        }
+
+        with codecs.open(file_name, 'w', 'utf8') as f:
+            dumped = json.dumps(result, indent=2, sort_keys=True)
+            f.write(dumped)
 
 
 if __name__ == '__main__':
-    book = PhoneBook()
-    book.load()
-    #print(book.load())
+    book = ContactBook()
+    book.write_contact('db.json', '4567890', 'Zorg', 'Petrov')
+    book.write_contact('db.json', '1212', 'Zorg', 'Petrov')
+
 
 # создать объектperson
