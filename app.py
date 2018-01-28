@@ -1,4 +1,6 @@
 from flask import Flask, render_template, jsonify
+from domain import ContactBook
+
 
 #__name__ - file name
 app = Flask(__name__)
@@ -11,11 +13,10 @@ def index():
 @app.route('/contacts/', methods=['GET'])
 def contacts():
     #jsonify превращает .py словарь в js объект
+    book = ContactBook()
+    book.append_contacts()
     return jsonify(
-        contacts = {
-            'name': 'Petro',
-            'phone': '123456',
-        }
+        contacts = book.contacts
     )
 
-app.run(debug=True, host='localhost', port=8081)
+app.run(debug=True, host='localhost', port=8089)

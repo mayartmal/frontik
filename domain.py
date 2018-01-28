@@ -23,6 +23,7 @@ class ContactBook:
     def __load_contacts(self, file_name):
         with open(file_name, 'r') as f:
             result = json.load(f)
+        print(result['contacts'])
         return result['contacts']
 
     def write_contact(self, file_name, phone, first_name, second_name):
