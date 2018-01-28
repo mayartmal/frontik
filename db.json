@@ -1,11 +1,19 @@
 {
   "contacts": {
-    "1212": {
-      "firstName": "Zorg",
+    "+7 (916) 647-98-35": {
+      "firstName": "Ivan",
+      "secondName": "Kuznetsov"
+    },
+    "+7 (920) 245-32-42": {
+      "firstName": "Igor",
       "secondName": "Petrov"
     },
-    "4567890": {
-      "firstName": "Zorg",
+    "+7 (920) 333-33-95": {
+      "firstName": "Alla",
+      "secondName": "Haritonova"
+    },
+    "+7 (999) 345-77-45": {
+      "firstName": "Maksim",
       "secondName": "Petrov"
     }
   }
