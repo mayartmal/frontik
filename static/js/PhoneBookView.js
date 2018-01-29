@@ -2,25 +2,22 @@ class PhoneBookView {
 
   // перенести фцию loadcontactsfrom server сюда
   // реализовать отрисовку по полученнуму словарю из db
-  // 
+  //
 
 	constructor(book) {
 		let personsRow = document.getElementById('personsRow');
 
-		for (var key in book.persons) {
-			// getting sets
-			let person = book.persons[key];
-			let personObject = person['personObject'];
+		for (let phone in book.contactList) {
 
-			// getting user info
-			let personPhone = person['phone'];
-			let personLogin = personObject.getLogin();
-			let personFirstName = personObject.getFirstName();
-			let personSecondName = personObject.getSecondName();
+			// getting sets
+			let contact = book.contactList[phone];
+			// getting contact info
+			let firstName = contact.firstName;
+			let secondName = contact.secondName;
 
 			// tags prepearing
 			let colDiv = document.createElement('div');
-			colDiv.className = 'col-md-4';
+			colDiv.className = 'col-md-3';
 			let thumbnailDiv = document.createElement('div');
 			thumbnailDiv.className = 'thumbnail';
 
@@ -38,15 +35,11 @@ class PhoneBookView {
 			thumbnailChailds.push(captionDiv);
 
 			let thumbnailLabel = document.createElement('h3');
-			thumbnailLabel.innerHTML = personFirstName + ' ' + personSecondName;
+			thumbnailLabel.innerHTML = firstName + ' ' + secondName;
 			thumbnailChailds.push(thumbnailLabel);
 
-			let loginField = document.createElement('span');
-			loginField.innerHTML = 'User login: ' + personLogin + ' ';
-			thumbnailChailds.push(loginField);
-
 			let phoneField = document.createElement('span');
-			phoneField.innerHTML = 'User phone: ' + personPhone;
+			phoneField.innerHTML = 'Phone number: ' + phone;
 			thumbnailChailds.push(phoneField);
 
 			let btnParagraph = document.createElement('p');
