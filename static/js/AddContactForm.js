@@ -1,10 +1,13 @@
-sclass AddContactForm {
+class AddContactForm {
   constructor() {
+
     let formDiv = document.getElementById('addContactFormPlace');
 
     let form = document.createElement('form');
     form.className = 'form-inline';
     form.role = 'form';
+
+    formDiv.appendChild(form);
 
 
 
@@ -52,17 +55,25 @@ sclass AddContactForm {
     phoneNumberDiv.appendChild(phoneNumberInput);
 
 
+    let submitBtnDiv = document.createElement('div');
+    submitBtnDiv.className = 'form-group';
 
+    let submitBtnInput = document.createElement('input');
+    submitBtnInput.className = 'btn btn-info';
+    submitBtnInput.type = 'submit';
+    submitBtnInput.value = 'Send';
+    submitBtnDiv.appendChild(submitBtnInput);
 
-    formDiv.appendChild(firstNameDiv);
-    formDiv.appendChild(secondNameDiv);
-    formDiv.appendChild(phoneNumberDiv);
+    form.appendChild(firstNameDiv);
+    form.appendChild(secondNameDiv);
+    form.appendChild(phoneNumberDiv);
+    form.appendChild(submitBtnDiv);
 
 
 
 
     //
-    // <!-- <form role="form" class="form-inline">
+    // <<form role="form" class="form-inline">
     //    <div class="form-group">
     //       <label for="firstName">Имя</label>
     //       <input name="name" type="text"  class="form-control" placeholder="Имя"/>
