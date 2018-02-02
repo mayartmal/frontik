@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 from domain import ContactBook
 
 
@@ -19,4 +19,17 @@ def contact_list():
         contacts = book.contact_list
     )
 
-app.run(debug=True, host='localhost', port=8088)
+@app.route('/contact_list/new', methods = ['POST'])
+def new():
+    print('ready to new')
+    phoneNumber = request.form['phoneNumber']
+    firstName = request.form['firstName']
+    secondName = request.form['secondName']
+    print(phoneNumber + ' ' + firstName + ' ' + secondName)
+
+    book = ContactBook()
+    book.write_contact('db.json', phoneNumber, firstName, secondName)
+    print('DONEEEEEEEEEEEEEEEEEEEEEEEEEEE') 
+    return '<h1>Contact is added</h1>'
+
+app.run(debug=True, host='localhost', port=8087)

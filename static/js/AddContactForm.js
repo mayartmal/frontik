@@ -4,6 +4,9 @@ class AddContactForm {
     let formDiv = document.getElementById('addContactFormPlace');
 
     let form = document.createElement('form');
+    form.action = '/contact_list/new';
+    form.name = 'formName'
+    form.method ='post';
     form.className = 'form-inline';
     form.role = 'form';
 

@@ -15,6 +15,14 @@
     "+7 (999) 345-77-45": {
       "firstName": "Maksim",
       "secondName": "Petrov"
+    },
+    "+9 666 444 55 21": {
+      "firstName": "Igor",
+      "secondName": "Akinfeev"
+    },
+    "8 999 555 66 77": {
+      "firstName": "Denis",
+      "secondName": "Kokorin"
     }
   }
 }
