@@ -4,6 +4,14 @@ function loadContactsFromServer() {
   let view = new PhoneBookView(book);
 }
 
+function createContact(){
+  console.log('ready');
+  let addContactForm = new AddContactForm();
+  console.log('ok');
+
+}
+
+
 function onload() {
 
 

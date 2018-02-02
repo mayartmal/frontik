@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="../static/style.css">
     <script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
     <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/js/AddContactForm.js"></script>
     <script src="../static/js/PhoneBook.js"></script>
     <script src="../static/js/PhoneBookView.js"></script>
     <script src="../static/js/app.js"></script>
+    <!-- <script src="../static/js/AddContactForm.js"></script> -->
   </head>
 
   <nav class="navbar navbar-inverse" role="navigation">
@@ -72,6 +74,7 @@
             <h2>User name</h2>
             <span>
               <a class="btn btn-primary" onclick="loadContactsFromServer();" >Load contacts</a>
+              <a class="btn btn-primary" onclick="createContact();" >New contact</a>
               <!-- <a class="btn btn-default" >Default</a> -->
               <!-- <a class="btn btn-warning" >Warning</a>
               <a class="btn btn-success" >Success</a>
@@ -80,6 +83,25 @@
             </span>
 
           </div>
+
+          <div id="addContactFormPlace">
+            <!-- <form role="form" class="form-inline">
+               <div class="form-group">
+                  <label for="name">Имя</label>
+                  <input name="name" type="text"  class="form-control" placeholder="Имя"/>
+               </div>
+               <div class="form-group">
+                  <label for="email">E-mail</label>
+                  <input name="email" type="email" class="form-control" placeholder="E-mail"/>
+               </div>
+               <div class="form-group">
+                  <input type="submit" class="btn btn-info" value="Отправить" />
+               </div>
+            </form> -->
+          </div>
+
+
+
           <div id='personsRow' class="row">
             <!-- <div class="col-md-12">
               <div class="thumbnail">

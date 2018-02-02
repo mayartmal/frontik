@@ -19,4 +19,4 @@ def contact_list():
         contacts = book.contact_list
     )
 
-app.run(debug=True, host='localhost', port=8089)
+app.run(debug=True, host='localhost', port=8088)

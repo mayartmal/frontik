@@ -1,9 +1,4 @@
 class PhoneBookView {
-
-  // перенести фцию loadcontactsfrom server сюда
-  // реализовать отрисовку по полученнуму словарю из db
-  //
-
 	constructor(book) {
 		let personsRow = document.getElementById('personsRow');
 
