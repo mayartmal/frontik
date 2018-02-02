@@ -9,7 +9,7 @@ console.log(a + b);
 
 // arrs
 let persons = [
-  'Маша', 'Саша', 'Паша', 'Любаша'
+  'Маша', 'Саша', 'Паша', 'Катюша'
 ]
 
 for (let i = 0; i < persons.length; i++) {
