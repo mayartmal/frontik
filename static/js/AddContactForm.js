@@ -91,5 +91,8 @@ class AddContactForm {
     // </form> -->
   }
 
+  formFieldsBuilder(){
+
+  }
 
 }

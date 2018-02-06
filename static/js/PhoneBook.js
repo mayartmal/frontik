@@ -30,6 +30,7 @@ class PhoneBook {
 
     }
   }
+  
 
   appendContact(phone, firstName, secondName){
       this.contactList[phone] = {
