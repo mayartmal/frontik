@@ -8,7 +8,8 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     #return '<h1>test</h1>'
-    return render_template('index.html')
+    #return render_template('index.html')
+    return render_template('login.html')
 
 @app.route('/contact_list/', methods=['GET'])
 def contact_list():
@@ -29,7 +30,8 @@ def new():
 
     book = ContactBook()
     book.write_contact('db.json', phoneNumber, firstName, secondName)
-    print('DONEEEEEEEEEEEEEEEEEEEEEEEEEEE') 
+    print('DONEEEEEEEEEEEEEEEEEEEEEEEEEEE')
     return '<h1>Contact is added</h1>'
+
 
 app.run(debug=True, host='localhost', port=8087)
