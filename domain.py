@@ -1,6 +1,5 @@
 import codecs, json
 
-
 #почему номер телефона присваивается в классе person
 class ContactBook:
 
@@ -52,6 +51,24 @@ class ContactBook:
         with codecs.open(file_name, 'w', 'utf8') as f:
             dumped = json.dumps(result, indent=2, sort_keys=True)
             f.write(dumped)
+
+class Users:
+    def __init__(self):
+        self.users_list = {
+        "id1": {
+          "userEmail": "mayartmal@gmail.com",
+          "password": "pass1"
+        },
+        "id2": {
+          "userEmail": "airam@gmail.com",
+          "password": "pass2"
+        },
+        "id3": {
+          "userEmail": "filin@gmail.com",
+          "password": "pass3"
+        }
+      }
+
 
 #WTF ??????????????????????????????????
 if __name__ == '__main__':
