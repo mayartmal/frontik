@@ -15,11 +15,23 @@ def loginData():
     print('ready2login')
     userEmail = request.form['username']
     password = request.form['password']
-    print(userEmail + " " + password)
+    print("Recieved user mail and pas is: " + userEmail + " " + password + "\n")
     users = Users()
-    print(users.users_list)
-    for id in users.users_list:
-        print(users.users_list[id])  
+    try:
+        if userEmail not in users.users_list:
+            raise Exception("user is not registered")
+        else:
+            if password != users.users_list[userEmail]:
+                raise Exception("wrong password")
+    except Exception as inst:
+        print(str(inst))
+        return('login faild: ' + str(inst))
+    print("usr chek ok\n")
+
+    k = 1;
+    for email in users.users_list:
+        print("Email user " + str(k) +  " is " + email + " pas is: " + users.users_list[email] + "\n")
+        k = k + 1
     return('login ok')
 
 

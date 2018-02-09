@@ -1,16 +1,6 @@
 {
-  "contacts": {
-    "id1": {
-      "userEmail": "mayartmal@gmail.com",
-      "password": "pass1"
-    },
-    "id2": {
-      "userEmail": "airam@gmail.com",
-      "password": "pass2"
-    },
-    "id3": {
-      "userEmail": "filin@gmail.com",
-      "password": "pass3"
-    }
+  "users_list": {
+    "corben@element.io": "dalas",
+    "divaplavalaguna@element.io": "liludalas"
   }
 }

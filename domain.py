@@ -55,24 +55,34 @@ class ContactBook:
 class Users:
     def __init__(self):
         self.users_list = {
-        "id1": {
-          "userEmail": "mayartmal@gmail.com",
-          "password": "pass1"
-        },
-        "id2": {
-          "userEmail": "airam@gmail.com",
-          "password": "pass2"
-        },
-        "id3": {
-          "userEmail": "filin@gmail.com",
-          "password": "pass3"
-        }
+        # "mayartmal@gmail.com" : "pass1",
+        # "moysha@gmail.com" : "pass2",
+        # "filin@gmail.com" : "pass3"
       }
 
+    def write_user(self, file_name, userEmail, password):
+        #файл(словарь) db загружается в переменную results
+        with codecs.open(file_name, 'r', 'utf8') as f:
+            result = json.load(f)
+        #в полученный словарь (result) по ключу верхнего уровня 'contacts' и
+        #номеру телефона добавляется новая запись с именем и фамилией
+        result['users_list'][userEmail] = password
+        #файл db перезаписывается новым словарем result
+        with codecs.open(file_name, 'w', 'utf8') as f:
+            dumped = json.dumps(result, indent=2, sort_keys=True)
+            f.write(dumped)
 
 #WTF ??????????????????????????????????
 if __name__ == '__main__':
-    pass
+    users = Users()
+    k = 1;
+    for email in users.users_list:
+        print("Email user " + str(k) +  " is " + email + " pas is: " + users.users_list[email] + "")
+        k = k + 1
+    users.write_user("users_db.json", "divaplavalaguna@element.io", "liludalas")
+    users.write_user("users_db.json", "corben@element.io", "dalas")
+    print('ok')
+    #pass
     # book = ContactBook()
     # book.get_contact_list_from_db()
     # print(book.contact_list)
